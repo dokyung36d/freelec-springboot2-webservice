@@ -16,10 +16,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class PostsRepositoryTest {
 
-    @Autowired
+    @Autowired //필요한 의존 객체의 "타입"에 해당하는 빈을 찾아 주입한다.
     PostsRepository postsRepository;
 
-    @After
+    @After //단위 테스트가 끝날 때마다 실행
     public void cleanup() {
         postsRepository.deleteAll();
     }
