@@ -10,11 +10,11 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @Getter
-@MappedSuperclass
+@MappedSuperclass //jpa가 해당 클래스를 상속할 경우 필드들도 column에 포함되도록 설정
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseTimeEntity {
 
-    @CreatedDate
+    @CreatedDate //entity가 생성될 떼 시간이 자동 저장되도록 설정
     private LocalDateTime createdDate;
 
     @LastModifiedDate
