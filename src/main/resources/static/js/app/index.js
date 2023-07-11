@@ -1,4 +1,4 @@
-var main = {
+var main = { //함수 중복을 막기 위해 사용
     init : function () {
         var _this = this;
         $('#btn-save').on('click', function () {
@@ -20,7 +20,7 @@ var main = {
             content: $('#content').val()
         };
 
-        $.ajax({
+        $.ajax({ //비동기식으로 서버로부터 데이터를 받아옴.
             type: 'POST',
             url: '/api/v1/posts',
             dataType: 'json',
@@ -28,7 +28,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/'; //글 등록이 성공하면 메인페이지로 이동
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
